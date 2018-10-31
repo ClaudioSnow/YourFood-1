@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title padding center text-center>YourFood</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding center text-center>
+  <h1>Login</h1>
+  <ion-card>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Usuário</ion-label>
+        <ion-input placeholder="Usuário" type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+  <ion-button full shape="round" color="secondary" fill="outline" (click)='login()'>Login in</ion-button>
+
+  <ion-button full color="secondary" (click)="goCadastro()">Cadastro</ion-button>
+</ion-content>
