@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-icon slot="start" class="icone" ios="ios-arrow-back" md="md-arrow-back" (click)="goBack()"></ion-icon><ion-title>food</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page" class="bg-color">
+           
+  
+   
+  <ion-slides pager="true" class="slideFoods">
+
+      <ion-slide>
+          <img src="https://guiadacozinha.com.br/wp-content/uploads/2018/06/hamburguer-mexicano.jpg"/> 
+      </ion-slide>
+  
+      <ion-slide>
+          <img src="http://www.ganhaquemperde.com.br/images/hamburguerdepalmito.jpg"/>
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="http://gigalista.com.br/uploads//noticias/b484c2d8fb0dbd01804cf14a4f41d7c8.png">
+      </ion-slide>
+  </ion-slides>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>x-tudo</ion-label>
+      <ion-label class="listPrecos">$19.99  
+        <ion-button (click)="goBack()" color="secondary"><ion-icon class="icone" ios="logo-usd" md="logo-usd"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>sanduba</ion-label>
+      <ion-label class="listPrecos">$10.00  
+        <ion-button (click)="goBack()" color="secondary"><ion-icon class="icone" ios="logo-usd" md="logo-usd"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>tradicional</ion-label>
+      <ion-label class="listPrecos">$15.99  
+        <ion-button (click)="goBack()" color="secondary"><ion-icon class="icone" ios="logo-usd" md="logo-usd"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>burger 4 queijos</ion-label>
+      <ion-label class="listPrecos">$19.99  
+        <ion-button (click)="goBack()" color="secondary"><ion-icon class="icone" ios="logo-usd" md="logo-usd"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>x-tudo vegano</ion-label>
+      <ion-label class="listPrecos">$25.99  
+        <ion-button (click)="goBack()" color="secondary"><ion-icon class="icone" ios="logo-usd" md="logo-usd"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
