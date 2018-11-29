@@ -1,10 +1,11 @@
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { User } from './../models/usuario';
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NavParams } from '@ionic/angular/dist/directives/navigation/nav-params';
 import { List, Item } from '@ionic/angular';
 import { NavController } from "@ionic/angular";
-import { Usuario } from '../models/usuario';
 
 
 @Component({
@@ -25,25 +26,25 @@ export class CadastroPage implements OnInit {
       Validators.email,
       Validators.nullValidator
     ]),
-    idade: new FormControl(18, [
-      Validators.required,
-      Validators.nullValidator
-    ]),
-    sexo: new FormControl('', [
-      Validators.required,
-      Validators.nullValidator
-    ])
   });
-  Usuario: Usuario;
+  user: User;
 
   private inicializarCliente(): void {
 
   }
 
-  constructor(public navCtrl: NavController) { }
+  constructor(private afAuth:AngularFireDatabaseModule,
+
+    public navCtrl: NavController) {
+
+     }
 
   goBack() {
     this.navCtrl.navigateBack('/home')
+  }
+
+  register(user: User){
+
   }
 
   ngOnInit() {

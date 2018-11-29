@@ -1,3 +1,7 @@
+import { AuthService } from '../shared/auth.service';
+import { OnInit } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 import { CadastroPage } from './../cadastro/cadastro.page';
 import { Component } from '@angular/core';
 import { Button, NavController } from '@ionic/angular';
@@ -8,10 +12,15 @@ import { Button, NavController } from '@ionic/angular';
   styleUrls: ['login.page.scss']
 })
 export class LoginPage {
+  topics: AngularFireList<any[]>;
+  user = null;
   username: string;
   password: string;
   pushPage: any;
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public db: AngularFireDatabase,
+    private auth: AuthService,
+    public navCtrl: NavController) {
     this.pushPage = CadastroPage
 
   }
@@ -26,6 +35,20 @@ export class LoginPage {
 
   goCadastro() {
     return this.navCtrl.navigateForward('/cadastro');
+  }
+
+  ngOnInit() {
+    this.auth.getAuthState().subscribe(
+      (user) => this.user = user);
+    this.topics = this.db.list('/topics');
+  }
+
+  loginWithGoogle() {
+    this.auth.loginWithGoogle();
+  }
+
+  isloggedIn() {
+    return this.auth.isloggedIn();
   }
 }
 

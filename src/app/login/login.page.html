@@ -1,11 +1,14 @@
 <ion-header>
   <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     <ion-title padding center text-center>YourFood</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding center text-center>
+<ion-content class="bg-color" padding center text-center>
   <h1>Login</h1>
   <ion-card>
     <ion-list>
@@ -22,7 +25,11 @@
 
     </ion-list>
   </ion-card>
-  <ion-button full shape="round" color="secondary" fill="outline" (click)='login()'>Login in</ion-button>
+  
+  <button (click)="loginWithGoogle()">Login with Google</button>
+  <ion-button full shape="round" color="secondary" (click)='login()'>Login in</ion-button>
 
   <ion-button full color="secondary" (click)="goCadastro()">Cadastro</ion-button>
+
+  
 </ion-content>
