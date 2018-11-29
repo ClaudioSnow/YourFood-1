@@ -55,6 +55,10 @@ export class AppComponent implements OnInit {
     this.auth.loginWithGoogle();
   }
 
+  isloggedIn(){
+    return this.auth.isloggedIn();
+  }
+
 
   initializeApp() {
     this.platform.ready().then(() => {

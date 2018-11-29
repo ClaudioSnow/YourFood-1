@@ -25,6 +25,13 @@
 
     </ion-list>
   </ion-card>
+  <div *ngIf="isloggedIn()">
+    <ul>
+      <li class="text" *ngFor="let topic of topics | async">
+        {{topic.$value}}
+      </li>
+    </ul>
+  </div>
   
   <button (click)="loginWithGoogle()">Login with Google</button>
   <ion-button full shape="round" color="secondary" (click)='login()'>Login in</ion-button>
